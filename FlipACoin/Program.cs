@@ -20,9 +20,22 @@ namespace FlipACoin
             }
             Console.WriteLine("#Heads: " + headsCounter);
             Console.WriteLine("#Tails: " + tailsCounter);
+
+            Console.WriteLine("It took " + FlipForHeads() + " times to get a head");
+
             Console.ReadKey();
         }
 
+        public static int FlipForHeads()
+        {
+            int counter = 1;
+            // Flip while it is not a Head
+            while (rng.Next(2) != 0)
+            {
+                counter++;
+            }
+            return counter;
+        }
         public static string FlipACoin()
         {
             if (rng.Next(2) == 0)
